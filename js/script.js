@@ -47,13 +47,14 @@ function getHero() {
     render();
   }
 
-  var intersect = function(npc) {
+  var intersect = function(npc) {    
     if (coords.x == npc.coords.x - 1 && coords.y == npc.coords.y ||
         coords.x == npc.coords.x + 1 && coords.y == npc.coords.y ||
         coords.y == npc.coords.y - 1 && coords.x == npc.coords.x ||
         coords.y == npc.coords.y + 1 && coords.x == npc.coords.x) {
-      alert("NPC here!");
+        return true;
     }
+    return false;
   }
 
   render();
@@ -114,6 +115,16 @@ document.addEventListener('keydown', function(e) {
   }
 
   if (e.code === 'KeyZ') {
-    hero.intersect(merchant);
+    var dialogue = document.querySelector('#dialogue_box');
+    var didIntersect = hero.intersect(merchant);
+    
+    if (didIntersect) {
+      if (dialogue.style.visibility == 'visible') {
+        dialogue.style.visibility = 'hidden';
+      }
+      else {
+        dialogue.style.visibility = 'visible';
+      }
+    }
   }
 })
