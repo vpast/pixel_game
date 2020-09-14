@@ -27,7 +27,6 @@
 }
 
 #dialogue_box {
-    display: block;
     position: absolute;
     width: 730px;
     height: 150px;
@@ -44,25 +43,5 @@
     font-size: 14px;
     color: white;
     line-height: 40px;
-    white-space: nowrap;
-    overflow: hidden;
     padding-left: 15px;
-
-    width: 100%;
-    opacity: 0;
-    animation: type3 2s steps(40, end), blink .5s step-end infinite alternate;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
 }
-
-@keyframes type3 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }

@@ -94,6 +94,11 @@ function menuNavigation() {
 
 }
 
+var typed = new Typed('#dialogue_box', {
+  strings: ["I think, this can be read!", "Until i try to include this into JavaScript."],
+  typeSpeed: 30
+});
+
 
 // client code
 var hero = getHero();
