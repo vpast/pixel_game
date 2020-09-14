@@ -47,14 +47,16 @@ function getHero() {
     render();
   }
 
-  var intersect = function(npc) {    
-    if (coords.x == npc.coords.x - 1 && coords.y == npc.coords.y ||
-        coords.x == npc.coords.x + 1 && coords.y == npc.coords.y ||
-        coords.y == npc.coords.y - 1 && coords.x == npc.coords.x ||
-        coords.y == npc.coords.y + 1 && coords.x == npc.coords.x) {
-        return true;
-    }
-    return false;
+  // const intersect = (Math.abs(coords.x-npc.x) <= 1) && (Math.abs(coords.y-npc.y) <= 1) 
+  var intersect = function(npc) { 
+    return (Math.abs(coords.x-npc.x) <= 1) && (Math.abs(coords.y-npc.y) <= 1);
+    // if (coords.x == npc.coords.x - 1 && coords.y == npc.coords.y ||
+    //     coords.x == npc.coords.x + 1 && coords.y == npc.coords.y ||
+    //     coords.y == npc.coords.y - 1 && coords.x == npc.coords.x ||
+    //     coords.y == npc.coords.y + 1 && coords.x == npc.coords.x) {
+    //     return true;
+    // }
+    // return false;
   }
 
   render();
