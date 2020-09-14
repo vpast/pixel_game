@@ -49,7 +49,7 @@ function getHero() {
 
   // const intersect = (Math.abs(coords.x-npc.x) <= 1) && (Math.abs(coords.y-npc.y) <= 1) 
   var intersect = function(npc) { 
-    return (Math.abs(coords.x-npc.x) <= 1) && (Math.abs(coords.y-npc.y) <= 1);
+    return (Math.abs(coords.x-npc.coords.x) <= 1) && (Math.abs(coords.y-npc.coords.y) <= 1); 
     // if (coords.x == npc.coords.x - 1 && coords.y == npc.coords.y ||
     //     coords.x == npc.coords.x + 1 && coords.y == npc.coords.y ||
     //     coords.y == npc.coords.y - 1 && coords.x == npc.coords.x ||
@@ -58,6 +58,7 @@ function getHero() {
     // }
     // return false;
   }
+
 
   render();
   return {
@@ -89,12 +90,14 @@ function getMerchant() {
     }
 }
 
+function menuNavigation() {
+
+}
 
 
 // client code
 var hero = getHero();
 var merchant = getMerchant();
-
 
 
 document.addEventListener('keydown', function(e) {
@@ -119,7 +122,7 @@ document.addEventListener('keydown', function(e) {
   if (e.code === 'KeyZ') {
     var dialogue = document.querySelector('#dialogue_box');
     var didIntersect = hero.intersect(merchant);
-    
+
     if (didIntersect) {
       if (dialogue.style.visibility == 'visible') {
         dialogue.style.visibility = 'hidden';
