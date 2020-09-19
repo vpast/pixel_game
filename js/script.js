@@ -94,16 +94,11 @@ function menuNavigation() {
 
 }
 
-var typed = new Typed('#dialogue_box', {
-  strings: ["I think, this can be read!", "Until i try to include this into JavaScript."],
-  typeSpeed: 30
-});
-
 
 // client code
 var hero = getHero();
 var merchant = getMerchant();
-
+var typed;
 
 document.addEventListener('keydown', function(e) {
   console.log(e.code);
@@ -124,6 +119,7 @@ document.addEventListener('keydown', function(e) {
     hero.goToRight();
   }
 
+
   if (e.code === 'KeyZ') {
     var dialogue = document.querySelector('#dialogue_box');
     var didIntersect = hero.intersect(merchant);
@@ -131,10 +127,19 @@ document.addEventListener('keydown', function(e) {
     if (didIntersect) {
       if (dialogue.style.visibility == 'visible') {
         dialogue.style.visibility = 'hidden';
+        typed.destroy();
       }
       else {
         dialogue.style.visibility = 'visible';
+        typed = new Typed('#text', {
+          strings: ["I think, this can be read! Until i try to include this into JavaScript."],
+          typeSpeed: 1,
+          showCursor: false,
+          fadeOut: false,
+          bindInputFocusEvents: true
+        });
       }
     }
   }
+  console.log(typed);
 })
