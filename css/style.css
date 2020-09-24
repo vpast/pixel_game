@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #scene {
     width: 800px;
     height: 800px;
@@ -8,8 +12,8 @@
 
 #hero {
     background-image: url(/assets/hero.png);
-    width: 50px;
-    height: 50px;
+    width: 16px;
+    height: 16px;
     background-size: 100%;
     position: absolute;
     top: 0;
@@ -18,8 +22,8 @@
 
 #merchant {
     background-image: url(/assets/merchant.png);
-    width: 50px;
-    height: 50px;
+    width: 16px;
+    height: 16px;
     background-size: 100%;
     position: absolute;
     top: 0;
@@ -28,13 +32,13 @@
 
 #dialogue_box {
     position: absolute;
-    width: 730px;
-    height: 150px;
+    width: 87.5%;
+    height: 18.75%;
     background-color: black;
     border: 5px gray solid;
     border-radius: 20px;
-    bottom: 20px;
-    transform: translateX(5%);
+    bottom: 6.25%;
+    left: 6.25%;
     visibility: hidden;
     font-family: 'Press Start 2P', cursive;
 }
@@ -44,4 +48,18 @@
     color: white;
     line-height: 40px;
     padding-left: 15px;
+    margin-left: 15px;
+}
+
+.static-tree {
+    background-image: url(/assets/tree.png);
+}
+
+.static-object {
+    width: 16px;
+    height: 16px;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
