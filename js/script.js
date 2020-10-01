@@ -1,24 +1,10 @@
 var game = getGame("#scene");
 var hero = getHero(game);
-var merchant = getMerchant(game, {x:7, y:7});
+
 var typed;
+var merchant;
 
-// var location = {
-//   npc: {
-//     merchant: {dialog: ''}
-//   },
-//   staticObjects: {
-//     'static-tree': [
-//       {x:9, y:7},
-//       {x:10, y:8},
-//       {x:9, y:9}
-//     ]
-//   }
-// }
-
-getStaticObject(game, {x:9, y:7}, "static-tree");
-getStaticObject(game, {x:10, y:8}, "static-tree");
-getStaticObject(game, {x:9, y:9}, "static-tree");
+initLocation(game, loc1)
 
 document.addEventListener('keydown', function(e) {
   if (e.code === 'ArrowUp') {
@@ -50,7 +36,7 @@ document.addEventListener('keydown', function(e) {
       else {
         dialogue.style.visibility = 'visible';
         typed = new Typed('#text', {
-          strings: ["I think, this can be read! Until i try to include this into JavaScript."],
+          strings: merchant.strings,
           typeSpeed: 1,
           showCursor: false,
           fadeOut: false,

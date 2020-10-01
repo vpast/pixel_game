@@ -12,8 +12,8 @@
 
 #hero {
     background-image: url(/assets/hero.png);
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     background-size: 100%;
     position: absolute;
     top: 0;
@@ -22,8 +22,8 @@
 
 #merchant {
     background-image: url(/assets/merchant.png);
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     background-size: 100%;
     position: absolute;
     top: 0;
@@ -55,9 +55,13 @@
     background-image: url(/assets/tree.png);
 }
 
+.grave {
+    background-image: url(/assets/grave.png);
+}
+
 .static-object {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     background-size: 100%;
     position: absolute;
     top: 0;

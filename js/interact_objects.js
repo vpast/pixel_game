@@ -1,4 +1,4 @@
-function getMerchant(game, coords) {
+function getMerchant(game, coords, strings) {
     var merchantEl = document.createElement('div');
     merchantEl.setAttribute('id', 'merchant')
     game.sceneEl.append(merchantEl)
@@ -11,6 +11,7 @@ function getMerchant(game, coords) {
     game.addObject({coords});
     render();
     return {
-      coords
+      coords,
+      strings
     }
 }

@@ -1,3 +1,3 @@
-var CELL_SIZE = 16;
-var SCENE_X_MAX = 45;
-var SCENE_Y_MAX = 45;
+var CELL_SIZE = 32;
+var SCENE_X_MAX = 25;
+var SCENE_Y_MAX = 25;
