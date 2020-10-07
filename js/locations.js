@@ -3,6 +3,9 @@ var loc1 = {
       'merchant': {
         strings: ['I think, this can be read! Until i try to include this into JavaScript.'],
         coords: {x:7, y:7}
+      },
+      'enemy' : {
+        coords: {x:3, y:3}
       }
     },
     staticObjects: {
@@ -75,6 +78,14 @@ var loc1 = {
       for (let type of Object.keys(settings.staticObjects)) {
         for (let objectSettings of settings.staticObjects[type]) {
           getStaticObject(game, objectSettings, type);
+        }
+      }
+    }
+
+    if (settings.npc) {
+      for (let type of Object.keys(settings.npc)) {
+        if (type === 'enemy') {
+          enemy = getEnemy(game, settings.npc[type].coords);
         }
       }
     }

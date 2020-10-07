@@ -3,8 +3,9 @@ var hero = getHero(game);
 
 var typed;
 var merchant;
+var enemy;
 
-initLocation(game, loc1)
+initLocation(game, loc1);
 
 document.addEventListener('keydown', function(e) {
   if (e.code === 'ArrowUp') {
@@ -45,4 +46,19 @@ document.addEventListener('keydown', function(e) {
       }
     }
   }
+
+  if (e.code === 'KeyX') {
+    var didHit = hero.attack(enemy);
+    var hit = document.querySelector('#hit');
+
+    if (didHit.checkPosition) {
+      if (hit.style.visibility == 'visible') {
+        hit.style.visibility = 'hidden';
+      }
+      else {
+        hit.style.visibility = 'visible';
+      }
+    }
+  }
+
 })

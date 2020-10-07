@@ -66,6 +66,19 @@ function getHero(game) {
       // }
       // return false;
     }
+
+    var attack = function(npcEnemy, health) {
+        var checkPosition = (Math.abs(coords.x-npcEnemy.coords.x) <= 1) && (Math.abs(coords.y-npcEnemy.coords.y) <= 1);
+
+        if (checkPosition == true) {
+          health = npcEnemy.health -= 1;
+        }
+
+        return {
+            health,
+            checkPosition
+        }
+    }
   
   
     render();
@@ -75,6 +88,7 @@ function getHero(game) {
       goToLeft,
       goToDown,
       goToTop,
-      intersect
+      intersect,
+      attack
     }
   }
