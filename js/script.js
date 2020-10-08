@@ -66,6 +66,8 @@ document.addEventListener('keydown', function(e) {
       if (didHit.health == 0) {
         enemyTexture.style.visibility = 'hidden';
         hit.style.visibility = 'hidden';
+        enemyCoords = (locations.loc1.npc['enemy'].coords);
+        game.clearCell(enemyCoords);
       }
       else {
         if (didHit) {
@@ -74,6 +76,7 @@ document.addEventListener('keydown', function(e) {
           }
           else {
             hit.style.visibility = 'visible';
+            setTimeout(() => {hit.style.visibility = 'hidden'}, 500);
           }
         }
       }

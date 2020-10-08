@@ -21,11 +21,16 @@ function getGame(selector) {
     var getObject = function(coords) {
       return map[coords.x][coords.y];
     }
+
+    var clearCell = function(coords) {
+      map[coords.x][coords.y] = 0;
+    }
   
     return {
       isCellFree,
       getObject,
       addObject,
-      sceneEl
+      sceneEl,
+      clearCell
     }
   }

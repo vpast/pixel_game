@@ -7,7 +7,7 @@ var locations = {
       },
       'enemy': {
         coords: { x: 3, y: 3 }
-      }
+      },
     },
     staticObjects: {
       'static-tree': [
