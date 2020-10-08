@@ -8,7 +8,6 @@ function getMerchant(game, coords, strings) {
         merchantEl.style.top = coords.y * CELL_SIZE + "px"
     }
 
-
     game.addObject({coords});
     render();
     return {

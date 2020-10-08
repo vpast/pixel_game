@@ -15,13 +15,29 @@ span {
 }
 
 #hero {
-    background-image: url(/assets/hero.png);
+    background: url(/assets/hero-sprite.png) 0 0;
     width: 32px;
     height: 32px;
-    background-size: 100%;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
+    transition: top 0.2s, left 0.2s;
+}
+
+#hero.top {
+    background: url(/assets/hero-sprite.png) -32px 0;
+    background-size: cover;
+}
+
+#hero.right {
+    background: url(/assets/hero-sprite.png) -64px 0;
+    background-size: cover;
+}
+
+#hero.left {
+    background: url(/assets/hero-sprite.png) -96px 0;
+    background-size: cover;
 }
 
 #merchant {
@@ -83,6 +99,10 @@ span {
 
 .grave {
     background-image: url(/assets/grave.png);
+}
+
+.door {
+    background-image: url(/assets/door.png);
 }
 
 .static-object {

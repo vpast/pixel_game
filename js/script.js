@@ -5,7 +5,10 @@ var typed;
 var merchant;
 var enemy;
 
-initLocation(game, loc1);
+var urlParams = new URLSearchParams(location.search);
+var loc = urlParams.get('loc') || 'loc1';
+
+initLocation(game, locations[loc]);
 
 document.addEventListener('keydown', function(e) {
   if (e.code === 'ArrowUp') {
@@ -24,6 +27,13 @@ document.addEventListener('keydown', function(e) {
     hero.goToRight();
   }
 
+  if (e.code === 'KeyC') {
+    var target = game.getObject(hero.getTarget());
+
+    if(target.callback) {
+      target.callback(hero);  
+    }
+  }
 
   if (e.code === 'KeyZ') {
     var dialogue = document.querySelector('#dialogue_box');
@@ -50,15 +60,24 @@ document.addEventListener('keydown', function(e) {
   if (e.code === 'KeyX') {
     var didHit = hero.attack(enemy);
     var hit = document.querySelector('#hit');
+    var enemyTexture = document.querySelector('#enemy');
 
     if (didHit.checkPosition) {
-      if (hit.style.visibility == 'visible') {
+      if (didHit.health == 0) {
+        enemyTexture.style.visibility = 'hidden';
         hit.style.visibility = 'hidden';
       }
       else {
-        hit.style.visibility = 'visible';
+        if (didHit) {
+          if (hit.style.visibility == 'visible') {
+            hit.style.visibility = 'hidden';
+          }
+          else {
+            hit.style.visibility = 'visible';
+          }
+        }
       }
     }
+    console.log(didHit.health);
   }
-
 })
